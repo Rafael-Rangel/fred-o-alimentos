@@ -110,8 +110,11 @@ const Index = () => {
       </section>
 
       {/* Diferenciais */}
-      <section className="py-20 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${redPatternBg})` }}>
-        <div className="container mx-auto px-4 relative z-10">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-x" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-primary-foreground/80 font-semibold text-sm uppercase tracking-wider">Por que escolher</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-2">
@@ -192,7 +195,7 @@ const Index = () => {
 
       {/* Presença Nacional */}
       <section 
-        className="py-20 section-bg-rotated" 
+        className="py-20 section-bg-transformed section-bg-flip-y" 
         style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
       >
         <div className="container mx-auto px-4">

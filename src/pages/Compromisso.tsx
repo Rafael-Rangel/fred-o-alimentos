@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, Heart, Shield, Recycle, Users, Check } from "lucide-react";
+import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Compromisso = () => {
   const compromissos = [
@@ -42,7 +43,10 @@ const Compromisso = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gradient-hero">
+      <section 
+        className="py-20 section-bg-transformed section-bg-rotate" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             Nosso Compromisso
@@ -121,12 +125,15 @@ const Compromisso = () => {
       </section>
 
       {/* Propósito */}
-      <section className="py-20 bg-secondary">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-xy" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Nosso Propósito
           </h2>
-          <p className="text-secondary-foreground/80 text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-primary-foreground/80 text-xl max-w-3xl mx-auto leading-relaxed">
             "Ajudar as pessoas a se alimentar de forma saudável, com produtos naturais e de qualidade, a um preço acessível para todas as classes sociais."
           </p>
         </div>

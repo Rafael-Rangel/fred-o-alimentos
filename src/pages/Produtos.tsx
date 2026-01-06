@@ -5,6 +5,7 @@ import coconutOil from "@/assets/coconut-oil.jpg";
 import coconutRalado from "@/assets/coconut-ralado.jpg";
 import coconutProduct from "@/assets/coconut-product.jpg";
 import heroCoconut from "@/assets/hero-coconut.jpg";
+import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Produtos = () => {
   const produtos = [
@@ -114,7 +115,10 @@ const Produtos = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-hero">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-xy" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Quer nossos produtos na sua região?
