@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, Heart, Users, TrendingUp, MessageCircle } from "lucide-react";
-import heroHome from "@/assets/hero-home.jpg";
+import heroHome from "@/assets/hero-home.png";
 import coconutMilk from "@/assets/coconut-milk.jpg";
 import coconutOil from "@/assets/coconut-oil.jpg";
 import coconutRalado from "@/assets/coconut-ralado.jpg";
