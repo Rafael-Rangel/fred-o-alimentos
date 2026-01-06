@@ -36,6 +36,36 @@ const Index = () => {
             className="w-full h-full object-cover"
           />
         </div>
+        
+        <div className="container mx-auto px-4 relative z-10" style={{ display: 'none' }}>
+          <div className="max-w-2xl animate-fade-up">
+            <span className="inline-block bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
+              🥥 Do Pará para o Brasil
+            </span>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+              Alimentos naturais, acessíveis e feitos com
+              <span className="text-accent"> orgulho brasileiro</span>
+            </h1>
+            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed">
+              Desde 2020, levando saúde e qualidade para sua mesa com produtos à base de coco, produzidos no coração da Amazônia.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/produtos"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-1 text-lg"
+              >
+                Conheça nossos produtos
+                <ArrowRight size={20} />
+              </Link>
+              <Link
+                to="/sobre"
+                className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300 text-lg backdrop-blur-sm"
+              >
+                Nossa história
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* About Preview */}
