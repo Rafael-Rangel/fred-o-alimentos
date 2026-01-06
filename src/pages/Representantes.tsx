@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp, Users, MapPin, Award, Check } from "lucide-react";
+import { ArrowRight, TrendingUp, Users, MapPin, Award, Check, MessageCircle } from "lucide-react";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Representantes = () => {
@@ -33,13 +33,15 @@ const Representantes = () => {
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
             Leve os produtos Fredão Alimentos para sua região e faça parte do nosso crescimento.
           </p>
-          <Link
-            to="/contato"
+          <a
+            href="https://wa.me/5591999999999?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
+            <MessageCircle size={20} />
             Quero ser representante
-            <ArrowRight size={18} />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -144,13 +146,15 @@ const Representantes = () => {
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
             Entre em contato conosco e saiba como se tornar um representante Fredão Alimentos.
           </p>
-          <Link
-            to="/contato"
+          <a
+            href="https://wa.me/5591999999999?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
-            Entrar em Contato
-            <ArrowRight size={18} />
-          </Link>
+            <MessageCircle size={20} />
+            Entrar em Contato pelo WhatsApp
+          </a>
         </div>
       </section>
     </main>

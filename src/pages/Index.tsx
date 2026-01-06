@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Users, TrendingUp, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-coconut.jpg";
 import coconutMilk from "@/assets/coconut-milk.jpg";
 import coconutOil from "@/assets/coconut-oil.jpg";
@@ -244,13 +244,15 @@ const Index = () => {
             <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
               Entre em contato e descubra como nossos produtos podem fazer parte da sua rotina.
             </p>
-            <Link
-              to="/contato"
+            <a
+              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-md hover:-translate-y-0.5"
             >
-              Fale Conosco
-              <ArrowRight size={18} />
-            </Link>
+              <MessageCircle size={20} />
+              Fale Conosco pelo WhatsApp
+            </a>
           </div>
         </div>
       </section>
