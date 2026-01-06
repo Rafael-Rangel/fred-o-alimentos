@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { useToast } from "@/hooks/use-toast";
+import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Contato = () => {
   const { toast } = useToast();
@@ -50,13 +52,16 @@ const Contato = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-muted">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-y"
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Fale Conosco</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+          <span className="text-primary-foreground/80 font-semibold text-sm uppercase tracking-wider">Fale Conosco</span>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2 mb-6">
             Entre em Contato
           </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
             Tire suas dúvidas, faça pedidos ou saiba como se tornar um representante Fredão Alimentos.
           </p>
         </div>
@@ -85,7 +90,7 @@ const Contato = () => {
                   className="flex items-center gap-4 p-4 bg-[#25D366]/10 rounded-xl hover:bg-[#25D366]/20 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-primary-foreground" />
+                    <WhatsAppIcon size={24} className="text-primary-foreground" />
                   </div>
                   <div>
                     <span className="font-semibold text-foreground block">WhatsApp</span>

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import coconutMilk from "@/assets/coconut-milk.jpg";
-import coconutOil from "@/assets/coconut-oil.jpg";
-import coconutRalado from "@/assets/coconut-ralado.jpg";
-import coconutProduct from "@/assets/coconut-product.jpg";
-import heroCoconut from "@/assets/hero-coconut.jpg";
+import { ArrowRight } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import coconutMilk from "@/assets/coconut-milk-new.png";
+import coconutOil from "@/assets/coconut-oil-new.png";
+import coconutRalado from "@/assets/coconut-ralado-new.png";
+import coconutButter from "@/assets/coconut-butter.png";
+import shoyu from "@/assets/shoyu.png";
+import palmito from "@/assets/palmito.png";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Produtos = () => {
@@ -29,31 +31,31 @@ const Produtos = () => {
     },
     {
       name: "Manteiga de Coco",
-      image: coconutProduct,
+      image: coconutButter,
       description: "Alternativa saudável à manteiga tradicional.",
       benefits: ["Sem lactose", "Sem caseína", "Vegano"],
     },
     {
       name: "Shoyu",
-      image: heroCoconut,
+      image: shoyu,
       description: "Molho de soja de alta qualidade para suas receitas.",
       benefits: ["Sabor autêntico", "Fermentação natural", "Versátil"],
     },
     {
       name: "Palmito",
-      image: heroCoconut,
+      image: palmito,
       description: "Palmito de primeira qualidade, macio e saboroso.",
       benefits: ["Origem controlada", "Sustentável", "Premium"],
     },
     {
       name: "Farinha de Tapioca",
-      image: coconutRalado,
+      image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&h=800&fit=crop&q=80",
       description: "Farinha versátil para receitas tradicionais brasileiras.",
       benefits: ["Sem glúten", "Natural", "Alta qualidade"],
     },
     {
       name: "Goma de Tapioca",
-      image: coconutRalado,
+      image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=800&h=800&fit=crop&q=80",
       description: "Perfeita para tapiocas e receitas especiais.",
       benefits: ["Textura ideal", "Sem aditivos", "Pronta para uso"],
     },
@@ -62,13 +64,16 @@ const Produtos = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-muted">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-y"
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Nosso Portfólio</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+          <span className="text-primary-foreground/80 font-semibold text-sm uppercase tracking-wider">Nosso Portfólio</span>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2 mb-6">
             Linha de Produtos
           </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
             Produtos naturais à base de coco e outros alimentos saudáveis, desenvolvidos com qualidade e carinho para sua mesa.
           </p>
         </div>
@@ -133,7 +138,7 @@ const Produtos = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
             >
-              <MessageCircle size={20} />
+              <WhatsAppIcon size={20} />
               Fale Conosco pelo WhatsApp
             </a>
             <Link

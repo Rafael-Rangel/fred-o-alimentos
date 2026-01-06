@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf, MessageCircle } from "lucide-react";
-import aboutBg from "@/assets/about-bg.jpg";
-import coconutProduct from "@/assets/coconut-product.jpg";
+import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import coconutProduct from "@/assets/fredao.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Sobre = () => {
@@ -15,21 +15,15 @@ const Sobre = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="relative py-32">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={aboutBg}
-            alt="Natureza brasileira"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-foreground/70" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-y" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             Nossa História
           </h1>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-up">
+          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
             Conheça a trajetória da Fredão Alimentos e nossa paixão por alimentação saudável
           </p>
         </div>
@@ -166,7 +160,7 @@ const Sobre = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300"
             >
-              <MessageCircle size={20} />
+              <WhatsAppIcon size={20} />
               WhatsApp
             </a>
           </div>

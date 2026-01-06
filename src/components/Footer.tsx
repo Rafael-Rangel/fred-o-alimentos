@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,15 +10,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">F</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-xl">Fredão</span>
-                <span className="text-xs text-primary-foreground/70 -mt-1">Alimentos</span>
-              </div>
-            </div>
+            <Link to="/" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="Fredão Alimentos" 
+                className="w-20 h-20 rounded-full object-cover"
+              />
+            </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Alimentos naturais, acessíveis e feitos com orgulho brasileiro. Desde 2020, levando saúde e qualidade para sua mesa.
             </p>

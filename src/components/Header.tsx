@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.png";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,16 +21,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center">
             <img 
               src={logo} 
               alt="Fredão Alimentos" 
-              className="w-12 h-12 rounded-full object-cover"
+              className="w-16 h-16 rounded-full object-cover"
             />
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-xl text-foreground">Fredão</span>
-              <span className="text-xs text-muted-foreground -mt-1">Alimentos</span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,12 +44,15 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link
-              to="/contato"
-              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-red hover:-translate-y-0.5"
+            <a
+              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-red hover:-translate-y-0.5"
             >
+              <WhatsAppIcon size={20} />
               Fale Conosco
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,13 +79,16 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/contato"
+              <a
+                href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-heading font-semibold text-center hover:bg-primary/90 transition-all duration-300 mt-2"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 mt-2"
               >
+                <WhatsAppIcon size={20} />
                 Fale Conosco
-              </Link>
+              </a>
             </div>
           </nav>
         )}

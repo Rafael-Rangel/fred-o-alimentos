@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Shield, Recycle, Users, Check, MessageCircle } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Shield, Recycle, Users, Check, Award } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Compromisso = () => {
@@ -28,6 +29,11 @@ const Compromisso = () => {
       icon: Recycle,
       title: "Sustentabilidade",
       description: "Comprometidos com práticas sustentáveis na produção e industrialização do coco no Pará.",
+    },
+    {
+      icon: Award,
+      title: "Tradição e Experiência",
+      description: "Mais de 27 anos de experiência no setor alimentício, combinando tradição familiar com inovação para entregar o melhor.",
     },
   ];
 
@@ -162,7 +168,7 @@ const Compromisso = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              <MessageCircle size={20} />
+              <WhatsAppIcon size={20} />
               WhatsApp
             </a>
           </div>

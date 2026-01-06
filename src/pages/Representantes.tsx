@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp, Users, MapPin, Award, Check, MessageCircle } from "lucide-react";
+import { ArrowRight, TrendingUp, Users, MapPin, Award, Check } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Representantes = () => {
@@ -39,7 +40,7 @@ const Representantes = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
-            <MessageCircle size={20} />
+            <WhatsAppIcon size={20} />
             Quero ser representante
           </a>
         </div>
@@ -152,7 +153,7 @@ const Representantes = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
-            <MessageCircle size={20} />
+            <WhatsAppIcon size={20} />
             Entrar em Contato pelo WhatsApp
           </a>
         </div>

@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Users, TrendingUp, MessageCircle } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Users, TrendingUp } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import heroHome from "@/assets/hero-home.png";
-import coconutMilk from "@/assets/coconut-milk.jpg";
-import coconutOil from "@/assets/coconut-oil.jpg";
-import coconutRalado from "@/assets/coconut-ralado.jpg";
-import coconutProduct from "@/assets/coconut-product.jpg";
+import coconutMilk from "@/assets/coconut-milk-new.png";
+import coconutOil from "@/assets/coconut-oil-new.png";
+import coconutRalado from "@/assets/coconut-ralado-new.png";
+import coconutButter from "@/assets/coconut-butter.png";
+import fredao from "@/assets/fredao.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 const Index = () => {
   const products = [
     { name: "Leite de Coco", image: coconutMilk, description: "Cremoso e natural" },
     { name: "Óleo de Coco", image: coconutOil, description: "Puro e versátil" },
     { name: "Coco Ralado", image: coconutRalado, description: "Fresco e saboroso" },
-    { name: "Manteiga de Coco", image: coconutProduct, description: "Sem lactose" },
+    { name: "Manteiga de Coco", image: coconutButter, description: "Sem lactose" },
   ];
 
   const diferenciais = [
@@ -94,8 +96,8 @@ const Index = () => {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-card">
                 <img
-                  src={coconutProduct}
-                  alt="Coco fresco"
+                  src={fredao}
+                  alt="Frederico Pereira - Fundador da Fredão Alimentos"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -249,7 +251,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-md hover:-translate-y-0.5"
             >
-              <MessageCircle size={20} />
+              <WhatsAppIcon size={20} />
               Fale Conosco pelo WhatsApp
             </a>
           </div>
