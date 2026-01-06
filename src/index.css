@@ -156,13 +156,13 @@
     box-shadow: var(--shadow-red);
   }
 
-  /* Section with rotated/mirrored background */
-  .section-bg-rotated {
+  /* Base section with rotated/mirrored background */
+  .section-bg-transformed {
     position: relative;
     overflow: hidden;
   }
 
-  .section-bg-rotated::before {
+  .section-bg-transformed::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -170,12 +170,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Transform options: rotate(180deg), scaleX(-1), scaleY(-1), scale(-1, -1) */
-    transform: scaleX(-1);
     z-index: 0;
   }
 
-  .section-bg-rotated::after {
+  .section-bg-transformed::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -183,9 +181,26 @@
     z-index: 1;
   }
 
-  .section-bg-rotated > * {
+  .section-bg-transformed > * {
     position: relative;
     z-index: 2;
+  }
+
+  /* Transform variants */
+  .section-bg-flip-x::before {
+    transform: scaleX(-1); /* Espelhado horizontal - direita */
+  }
+
+  .section-bg-flip-y::before {
+    transform: scaleY(-1); /* Espelhado vertical - baixo */
+  }
+
+  .section-bg-rotate::before {
+    transform: rotate(180deg); /* Rotacionado 180° */
+  }
+
+  .section-bg-flip-xy::before {
+    transform: scale(-1, -1); /* Espelhado ambos eixos */
   }
 }
 

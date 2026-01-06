@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 import coconutProduct from "@/assets/coconut-product.jpg";
+import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Sobre = () => {
   const valores = [
@@ -140,7 +141,10 @@ const Sobre = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-hero">
+      <section 
+        className="py-20 section-bg-transformed section-bg-rotate" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Faça parte da nossa história

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, Users, MapPin, Award, Check } from "lucide-react";
+import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Representantes = () => {
   const beneficios = [
@@ -21,7 +22,10 @@ const Representantes = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gradient-hero">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-x" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             Seja um Representante
@@ -129,17 +133,20 @@ const Representantes = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-secondary">
+      <section 
+        className="py-20 section-bg-transformed section-bg-flip-y" 
+        style={{ '--bg-image': `url(${redPatternBg})` } as React.CSSProperties}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Pronto para fazer parte do nosso time?
           </h2>
-          <p className="text-secondary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
             Entre em contato conosco e saiba como se tornar um representante Fredão Alimentos.
           </p>
           <Link
             to="/contato"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
             Entrar em Contato
             <ArrowRight size={18} />
