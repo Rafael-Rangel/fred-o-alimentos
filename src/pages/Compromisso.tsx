@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Shield, Recycle, Users, Check } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Shield, Recycle, Users, Check, MessageCircle } from "lucide-react";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Compromisso = () => {
@@ -148,13 +148,24 @@ const Compromisso = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
             Descubra toda a nossa linha de produtos naturais e saudáveis.
           </p>
-          <Link
-            to="/produtos"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5"
-          >
-            Ver Produtos
-            <ArrowRight size={18} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/produtos"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5"
+            >
+              Ver Produtos
+              <ArrowRight size={18} />
+            </Link>
+            <a
+              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              <MessageCircle size={20} />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </main>

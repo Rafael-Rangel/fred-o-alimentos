@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import coconutMilk from "@/assets/coconut-milk.jpg";
 import coconutOil from "@/assets/coconut-oil.jpg";
 import coconutRalado from "@/assets/coconut-ralado.jpg";
@@ -127,13 +127,15 @@ const Produtos = () => {
             Entre em contato conosco ou torne-se um representante Fredão Alimentos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contato"
+            <a
+              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
             >
-              Fale Conosco
-              <ArrowRight size={18} />
-            </Link>
+              <MessageCircle size={20} />
+              Fale Conosco pelo WhatsApp
+            </a>
             <Link
               to="/representantes"
               className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300"

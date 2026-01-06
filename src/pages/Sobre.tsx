@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf } from "lucide-react";
+import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf, MessageCircle } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 import coconutProduct from "@/assets/coconut-product.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
@@ -152,13 +152,24 @@ const Sobre = () => {
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
             Conheça nossos produtos e descubra o sabor natural do coco brasileiro.
           </p>
-          <Link
-            to="/produtos"
-            className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
-          >
-            Ver nossos produtos
-            <ArrowRight size={18} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/produtos"
+              className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+            >
+              Ver nossos produtos
+              <ArrowRight size={18} />
+            </Link>
+            <a
+              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300"
+            >
+              <MessageCircle size={20} />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </main>
