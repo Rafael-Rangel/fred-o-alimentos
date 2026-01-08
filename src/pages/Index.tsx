@@ -2,18 +2,18 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, Heart, Users, TrendingUp } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import heroHome from "@/assets/hero-home.png";
-import coconutMilk from "@/assets/coconut-milk-new.png";
-import coconutOil from "@/assets/coconut-oil-new.png";
-import coconutRalado from "@/assets/coconut-ralado-new.png";
-import coconutButter from "@/assets/coconut-butter.png";
+import leiteCoco from "@/assets/leite-de-coco.png";
+import cocoRalado from "@/assets/coco-ralado.png";
+import oleoCoco from "@/assets/oleo-de-coco.png";
+import manteigaCoco from "@/assets/manteiga-de-coco.png";
 import fredao from "@/assets/fredao.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 const Index = () => {
   const products = [
-    { name: "Leite de Coco", image: coconutMilk, description: "Cremoso e natural" },
-    { name: "Óleo de Coco", image: coconutOil, description: "Puro e versátil" },
-    { name: "Coco Ralado", image: coconutRalado, description: "Fresco e saboroso" },
-    { name: "Manteiga de Coco", image: coconutButter, description: "Sem lactose" },
+    { name: "Leite de Coco", image: leiteCoco, description: "Cremoso e natural" },
+    { name: "Óleo de Coco", image: oleoCoco, description: "Puro e versátil" },
+    { name: "Coco Ralado", image: cocoRalado, description: "Fresco e saboroso" },
+    { name: "Manteiga de Coco", image: manteigaCoco, description: "Sem lactose" },
   ];
 
   const diferenciais = [

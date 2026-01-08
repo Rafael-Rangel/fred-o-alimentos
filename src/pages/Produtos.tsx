@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import coconutMilk from "@/assets/coconut-milk-new.png";
-import coconutOil from "@/assets/coconut-oil-new.png";
-import coconutRalado from "@/assets/coconut-ralado-new.png";
-import coconutButter from "@/assets/coconut-butter.png";
+import leiteCoco from "@/assets/leite-de-coco.png";
+import cocoRalado from "@/assets/coco-ralado.png";
+import oleoCoco from "@/assets/oleo-de-coco.png";
+import manteigaCoco from "@/assets/manteiga-de-coco.png";
 import shoyu from "@/assets/shoyu.png";
 import palmito from "@/assets/palmito.png";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
@@ -13,25 +13,25 @@ const Produtos = () => {
   const produtos = [
     {
       name: "Leite de Coco",
-      image: coconutMilk,
+      image: leiteCoco,
       description: "Cremoso e natural, ideal para receitas doces e salgadas.",
       benefits: ["Sem lactose", "Sem glúten", "100% natural"],
     },
     {
       name: "Óleo de Coco",
-      image: coconutOil,
+      image: oleoCoco,
       description: "Puro e versátil, perfeito para culinária e cuidados pessoais.",
       benefits: ["Extra virgem", "Prensado a frio", "Multiuso"],
     },
     {
       name: "Coco Ralado",
-      image: coconutRalado,
+      image: cocoRalado,
       description: "Fresco e saboroso, essencial para confeitaria.",
       benefits: ["Sem conservantes", "Textura perfeita", "Alto rendimento"],
     },
     {
       name: "Manteiga de Coco",
-      image: coconutButter,
+      image: manteigaCoco,
       description: "Alternativa saudável à manteiga tradicional.",
       benefits: ["Sem lactose", "Sem caseína", "Vegano"],
     },
