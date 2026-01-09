@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Heart, Users, TrendingUp, Download, Leaf, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, ShoppingCart } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import heroHome from "@/assets/hero-home.png";
 import leiteCoco from "@/assets/leite-de-coco.png";
@@ -10,10 +10,10 @@ import fredao from "@/assets/fredao.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 const Index = () => {
   const products = [
-    { name: "Leite de Coco", image: leiteCoco, description: "Cremoso e natural" },
-    { name: "Óleo de Coco", image: oleoCoco, description: "Puro e versátil" },
-    { name: "Coco Ralado", image: cocoRalado, description: "Fresco e saboroso" },
-    { name: "Manteiga de Coco", image: manteigaCoco, description: "Sem lactose" },
+    { name: "Leite de Coco", image: leiteCoco, description: "Cremoso e natural", tag: "Mais Vendido" },
+    { name: "Óleo de Coco", image: oleoCoco, description: "Puro e versátil", tag: "Extra Virgem" },
+    { name: "Coco Ralado", image: cocoRalado, description: "Fresco e saboroso", tag: "Melhor Preço" },
+    { name: "Manteiga de Coco", image: manteigaCoco, description: "Sem lactose", tag: "Sem Lactose" },
   ];
 
   const diferenciais = [
@@ -23,9 +23,44 @@ const Index = () => {
     { icon: TrendingUp, title: "Qualidade", description: "27 anos de experiência no setor" },
   ];
 
+  const produtosNovos = [
+    { name: "Creme de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Novo creme cremoso" },
+    { name: "Água de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Refrescante e natural" },
+    { name: "Farinha de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Sem glúten e nutritiva" },
+    { name: "Açúcar de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Alternativa saudável" },
+  ];
+
+  const empresas = [
+    "Guanabara",
+    "Atacadão",
+    "Carrefour",
+    "Walmart",
+    "Extra",
+    "Pão de Açúcar",
+    "Assaí",
+    "Big",
+  ];
+
   const estados = [
     "Pará", "Ceará", "Maranhão", "Pernambuco", "Minas Gerais", "Santa Catarina"
   ];
+
+  // Função para obter ícone baseado na tag
+  const getTagIcon = (tag: string) => {
+    const iconMap: { [key: string]: React.ComponentType<any> } = {
+      "Mais Vendido": Trophy,
+      "Campeão de Vendas": Trophy,
+      "Extra Virgem": Award,
+      "Melhor Preço": DollarSign,
+      "Sem Lactose": Shield,
+      "Artesanal": Sparkles,
+      "Sustentável": Recycle,
+      "Sem Glúten": ShieldCheck,
+      "Tradicional": Star,
+      "Novo": Sparkles,
+    };
+    return iconMap[tag] || Star;
+  };
 
   return (
     <main className="pt-20">
@@ -54,17 +89,62 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/produtos"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-1 text-lg"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-1 text-lg animate-bounce-in"
               >
                 Conheça nossos produtos
                 <ArrowRight size={20} />
               </Link>
               <Link
                 to="/sobre"
-                className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300 text-lg backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300 text-lg backdrop-blur-sm animate-bounce-in"
+                style={{ animationDelay: '0.1s' }}
               >
                 Nossa história
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Carrossel de Empresas */}
+      <section className="py-12 bg-card overflow-hidden">
+        <div className="text-center mb-8">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+            Empresas que confiam no Fredão
+          </h2>
+        </div>
+        <div className="w-screen overflow-hidden">
+          <style>{`
+            @keyframes scroll-infinite {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            .carousel-container:hover .carousel-track {
+              animation-play-state: paused;
+            }
+            .carousel-track {
+              animation: scroll-infinite 30s linear infinite;
+            }
+          `}</style>
+          <div className="relative overflow-hidden carousel-container">
+            <div className="flex carousel-track">
+              {/* Duplicar empresas para efeito infinito */}
+              {[...empresas, ...empresas].map((empresa, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_25%] md:flex-[0_0_20%] lg:flex-[0_0_16.666%] min-w-0 px-2 shrink-0"
+                >
+                  <div className="bg-muted rounded-lg p-4 md:p-6 h-20 md:h-24 flex items-center justify-center hover:bg-muted/80 transition-colors">
+                    <span className="font-semibold text-foreground text-xs md:text-sm lg:text-base text-center whitespace-nowrap">
+                      {empresa}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -110,6 +190,8 @@ const Index = () => {
         </div>
       </section>
 
+      <hr className="border-t-2 border-red-600 w-4/5 mx-auto" />
+
       {/* Diferenciais */}
       <section 
         className="py-20 section-bg-transformed section-bg-flip-x" 
@@ -127,7 +209,8 @@ const Index = () => {
             {diferenciais.map((item, index) => (
               <div
                 key={index}
-                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 text-center group"
+                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 text-center group animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors duration-300">
                   <item.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
@@ -143,6 +226,56 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <hr className="border-t-2 border-red-600 w-4/5 mx-auto" />
+
+      {/* Produtos Novos */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Novidades</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+              Produtos Novos
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Conheça nossos lançamentos mais recentes.
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {produtosNovos.map((produto, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 group animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="aspect-square overflow-hidden bg-muted relative">
+                  <div className="absolute top-2 right-2 z-10 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-bounce-in flex items-center gap-1.5">
+                    <Sparkles size={12} />
+                    Novo
+                  </div>
+                  <img
+                    src={produto.image}
+                    alt={produto.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-1">
+                    {produto.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {produto.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-t-2 border-red-600 w-4/5 mx-auto" />
 
       {/* Products Preview */}
       <section className="py-20 bg-card">
@@ -161,13 +294,24 @@ const Index = () => {
             {products.map((product, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 group animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-square overflow-hidden relative">
+                  {product.tag && (() => {
+                    const TagIcon = getTagIcon(product.tag);
+                    return (
+                      <div className="absolute top-2 right-2 z-10 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-bounce-in flex items-center gap-1.5">
+                        <TagIcon size={12} />
+                        {product.tag}
+                      </div>
+                    );
+                  })()}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
                   />
                 </div>
                 <div className="p-6">
@@ -183,16 +327,18 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link
-              to="/produtos"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5"
-            >
-              Ver todos os produtos
-              <ArrowRight size={18} />
-            </Link>
+              <Link
+                to="/produtos"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5 animate-bounce-in"
+              >
+                Ver todos os produtos
+                <ShoppingCart size={18} />
+              </Link>
           </div>
         </div>
       </section>
+
+      <hr className="border-t-2 border-red-600 w-4/5 mx-auto" />
 
       {/* Presença Nacional */}
       <section 
@@ -226,7 +372,7 @@ const Index = () => {
           <div className="text-center">
             <Link
               to="/representantes"
-              className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5 animate-bounce-in"
             >
               Quer levar a Fredão para sua região?
               <ArrowRight size={18} />
@@ -234,6 +380,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <hr className="border-t-2 border-red-600 w-4/5 mx-auto" />
 
       {/* CTA Final */}
       <section className="py-20 bg-card">
@@ -249,7 +397,7 @@ const Index = () => {
               href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-md hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-md hover:-translate-y-0.5 animate-bounce-in"
             >
               <WhatsAppIcon size={20} />
               Fale Conosco pelo WhatsApp

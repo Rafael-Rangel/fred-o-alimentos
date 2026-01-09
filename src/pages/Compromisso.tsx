@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Heart, Shield, Recycle, Users, Check, Award } from "lucide-react";
+import { ArrowRight, Heart, Shield, Recycle, Users, Check, Award, Sparkles } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Compromisso = () => {
   const compromissos = [
-    {
-      icon: Leaf,
-      title: "Produtos 100% Naturais",
-      description: "Todos os nossos produtos são feitos com ingredientes naturais, sem aditivos artificiais ou conservantes prejudiciais à saúde.",
-    },
     {
       icon: Heart,
       title: "Alimentação Saudável",
@@ -34,6 +29,11 @@ const Compromisso = () => {
       icon: Award,
       title: "Tradição e Experiência",
       description: "Mais de 27 anos de experiência no setor alimentício, combinando tradição familiar com inovação para entregar o melhor.",
+    },
+    {
+      icon: Sparkles,
+      title: "Inovação de Produtos",
+      description: "Constantemente desenvolvemos novos produtos e melhorias em nossa linha, sempre pensando nas necessidades e preferências dos nossos clientes.",
     },
   ];
 

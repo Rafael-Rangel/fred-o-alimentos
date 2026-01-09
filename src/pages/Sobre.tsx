@@ -134,6 +134,80 @@ const Sobre = () => {
         </div>
       </section>
 
+      {/* Curiosidades */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Sabia que?</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+              Curiosidades
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-card p-8 rounded-2xl shadow-card">
+              <div className="text-4xl mb-4">🥥</div>
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+                Origem Amazônica
+              </h3>
+              <p className="text-muted-foreground">
+                Todos os nossos cocos são cultivados na região amazônica, garantindo frescor e qualidade únicos.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card">
+              <div className="text-4xl mb-4">🌱</div>
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+                Processo Artesanal
+              </h3>
+              <p className="text-muted-foreground">
+                Utilizamos técnicas tradicionais combinadas com tecnologia moderna para preservar o sabor natural.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card">
+              <div className="text-4xl mb-4">📈</div>
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+                Crescimento Rápido
+              </h3>
+              <p className="text-muted-foreground">
+                Em apenas alguns anos, expandimos para mais de 6 estados brasileiros, levando qualidade para todo o país.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card">
+              <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+                Empresa Familiar
+              </h3>
+              <p className="text-muted-foreground">
+                A Fredão Alimentos mantém valores familiares, priorizando relacionamentos próximos com clientes e parceiros.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card">
+              <div className="text-4xl mb-4">♻️</div>
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+                Sustentabilidade
+              </h3>
+              <p className="text-muted-foreground">
+                Nosso processo de produção é pensado para minimizar o impacto ambiental e valorizar a comunidade local.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card">
+              <div className="text-4xl mb-4">🏆</div>
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
+                Reconhecimento
+              </h3>
+              <p className="text-muted-foreground">
+                Nossos produtos são reconhecidos por grandes redes de supermercados em todo o Brasil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section 
         className="py-20 section-bg-transformed section-bg-rotate" 

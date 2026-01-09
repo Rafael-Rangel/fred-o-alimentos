@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, Users, MapPin, Award, Check } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import mapa from "@/assets/MAPA.png";
+import BrasilMap from "@/components/BrasilMap";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Representantes = () => {
@@ -15,7 +15,7 @@ const Representantes = () => {
   ];
 
   const estatisticas = [
-    { icon: MapPin, value: "6+", label: "Estados atendidos" },
+    { icon: MapPin, value: "26", label: "Estados atendidos" },
     { icon: Users, value: "27", label: "Anos de experiência" },
     { icon: TrendingUp, value: "2020", label: "Ano de fundação" },
     { icon: Award, value: "8+", label: "Produtos na linha" },
@@ -122,7 +122,7 @@ const Representantes = () => {
               </p>
               
               <div className="flex flex-wrap gap-4 mb-8">
-                {["Pará", "Ceará", "Maranhão", "Pernambuco", "Minas Gerais", "Santa Catarina"].map((estado, index) => (
+                {["Pará", "Ceará", "Maranhão", "Pernambuco", "Minas Gerais", "Santa Catarina", "Rio de Janeiro"].map((estado, index) => (
                   <span
                     key={index}
                     className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium"
@@ -132,18 +132,18 @@ const Representantes = () => {
                 ))}
               </div>
               
-              <p className="text-muted-foreground text-lg">
-                E estamos em constante expansão para novos territórios!
-              </p>
+              <a
+                href="https://wa.me/5591999999999?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+              >
+                <WhatsAppIcon size={20} />
+                Quero ser representante
+              </a>
             </div>
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={mapa}
-                  alt="Mapa do Brasil - Presença da Fredão Alimentos"
-                  className="w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+            <div className="relative w-full">
+              <BrasilMap />
             </div>
           </div>
         </div>
