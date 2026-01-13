@@ -17,6 +17,7 @@ import atacadao from "@/assets/logosparceiros/atacadao.jpg";
 import grupomatheus from "@/assets/logosparceiros/grupomatheus.jpg";
 import cremeLeiteCoco from "@/assets/Creme de Leite de Coco.png";
 import leiteCocoCondensado from "@/assets/Leite de coco condesado.png";
+import logo from "@/assets/logo.png";
 const Index = () => {
   const products = [
     { name: "Leite de Coco", image: leiteCoco, description: "Cremoso e natural", tag: "Mais Vendido" },
@@ -78,6 +79,17 @@ const Index = () => {
 
   return (
     <main className="pt-20">
+      {/* Logo Banner - Mobile Only */}
+      <section className="md:hidden bg-primary py-8 px-4">
+        <div className="container mx-auto flex justify-center items-center">
+          <img
+            src={logo}
+            alt="Fredão Alimentos"
+            className="max-w-[280px] w-full h-auto object-contain"
+          />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
