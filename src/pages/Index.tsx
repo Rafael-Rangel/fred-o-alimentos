@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Users, TrendingUp, Leaf, ShoppingCart, Loader2, Clock } from "lucide-react";
+import { ArrowRight, Heart, Users, TrendingUp, Sparkles, ShoppingCart, Loader2, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { getTagIcon } from "@/utils/getTagIcon";
 import heroHome from "@/assets/hero-home.png";
@@ -28,7 +28,7 @@ const Index = () => {
   ];
 
   const diferenciais = [
-    { icon: Leaf, title: "Inovação de Produtos", description: "Novos produtos e melhorias constantes pensando em você." },
+    { icon: Sparkles, title: "Inovação de Produtos", description: "Novos produtos constantes pensando em você." },
     { icon: Heart, title: "Saudável", description: "Sem lactose, sem caseína" },
     { icon: Users, title: "Para Todos", description: "Preço acessível para todas as classes" },
     { icon: TrendingUp, title: "Qualidade", description: "27 anos de experiência no setor" },
@@ -226,7 +226,10 @@ const Index = () => {
               >
                 <div className="aspect-square overflow-hidden bg-muted relative">
                   <div className="absolute top-2 right-2 z-10 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-bounce-in flex items-center gap-1.5">
-                    <Sparkles size={12} />
+                    {(() => {
+                      const TagIcon = getTagIcon("Novo");
+                      return <TagIcon size={12} />;
+                    })()}
                     Novo
                   </div>
                   <img
