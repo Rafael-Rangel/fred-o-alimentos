@@ -8,6 +8,13 @@ import oleoCoco from "@/assets/oleo-de-coco.png";
 import manteigaCoco from "@/assets/manteiga-de-coco.png";
 import fredao from "@/assets/fredao.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
+import supermecadosBHlider from "@/assets/logosparceiros/supermecadosBHlider.jpg";
+import cencorsurd from "@/assets/logosparceiros/cencorsurd.jpg";
+import Guanabara from "@/assets/logosparceiros/Guanabara.jpg";
+import parceiro4 from "@/assets/logosparceiros/4.jpg";
+import assai from "@/assets/logosparceiros/assai.jpg";
+import atacadao from "@/assets/logosparceiros/atacadao.jpg";
+import grupomatheus from "@/assets/logosparceiros/grupomatheus.jpg";
 const Index = () => {
   const products = [
     { name: "Leite de Coco", image: leiteCoco, description: "Cremoso e natural", tag: "Mais Vendido" },
@@ -31,14 +38,13 @@ const Index = () => {
   ];
 
   const empresas = [
-    "Guanabara",
-    "Atacadão",
-    "Carrefour",
-    "Walmart",
-    "Extra",
-    "Pão de Açúcar",
-    "Assaí",
-    "Big",
+    { name: "Supermercados BH Líder", image: supermecadosBHlider },
+    { name: "Cencosud", image: cencorsurd },
+    { name: "Guanabara", image: Guanabara },
+    { name: "Parceiro", image: parceiro4 },
+    { name: "Assaí", image: assai },
+    { name: "Atacadão", image: atacadao },
+    { name: "Grupo Matheus", image: grupomatheus },
   ];
 
   const estados = [
@@ -136,12 +142,14 @@ const Index = () => {
               {[...empresas, ...empresas].map((empresa, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_25%] md:flex-[0_0_20%] lg:flex-[0_0_16.666%] min-w-0 px-2 shrink-0"
+                  className="flex-[0_0_20%] md:flex-[0_0_12.5%] lg:flex-[0_0_10%] min-w-0 shrink-0"
                 >
-                  <div className="bg-muted rounded-lg p-4 md:p-6 h-20 md:h-24 flex items-center justify-center hover:bg-muted/80 transition-colors">
-                    <span className="font-semibold text-foreground text-xs md:text-sm lg:text-base text-center whitespace-nowrap">
-                      {empresa}
-                    </span>
+                  <div className="bg-muted aspect-video flex items-center justify-center hover:bg-muted/80 transition-colors">
+                    <img
+                      src={empresa.image}
+                      alt={empresa.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               ))}
@@ -394,7 +402,7 @@ const Index = () => {
               Entre em contato e descubra como nossos produtos podem fazer parte da sua rotina.
             </p>
             <a
-              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              href="https://wa.me/559130163471?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-md hover:-translate-y-0.5 animate-bounce-in"
