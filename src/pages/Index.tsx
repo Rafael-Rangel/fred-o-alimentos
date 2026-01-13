@@ -142,7 +142,7 @@ const Index = () => {
               {[...empresas, ...empresas].map((empresa, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_20%] md:flex-[0_0_12.5%] lg:flex-[0_0_10%] min-w-0 shrink-0"
+                  className="flex-[0_0_20%] md:flex-[0_0_12.5%] lg:flex-[0_0_10%] min-w-0 shrink-0 mx-2"
                 >
                   <div className="bg-muted aspect-video flex items-center justify-center hover:bg-muted/80 transition-colors">
                     <img
