@@ -1,7 +1,8 @@
-import { Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, LucideIcon } from "lucide-react";
+import * as React from "react";
+import { Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star } from "lucide-react";
 
-export const getTagIcon = (tag: string): LucideIcon => {
-  const iconMap: { [key: string]: LucideIcon } = {
+export const getTagIcon = (tag: string): React.ComponentType<{ size?: number }> => {
+  const iconMap: { [key: string]: React.ComponentType<{ size?: number }> } = {
     "Mais Vendido": Trophy,
     "Campeão de Vendas": Trophy,
     "Extra Virgem": Award,
