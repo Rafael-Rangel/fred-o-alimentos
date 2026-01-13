@@ -18,7 +18,7 @@ const Representantes = () => {
     { icon: MapPin, value: "26", label: "Estados atendidos" },
     { icon: Users, value: "27", label: "Anos de experiência" },
     { icon: TrendingUp, value: "2020", label: "Ano de fundação" },
-    { icon: Award, value: "8+", label: "Produtos na linha" },
+    { icon: Award, value: "26+", label: "Produtos na linha" },
   ];
 
   return (
