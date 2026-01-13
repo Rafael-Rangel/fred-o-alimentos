@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, Loader2, Clock } from "lucide-react";
+import { ArrowRight, Download, Loader2, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { getTagIcon } from "@/utils/getTagIcon";
 import leiteCoco from "@/assets/leite-de-coco.png";
 import cocoRalado from "@/assets/coco-ralado.png";
 import oleoCoco from "@/assets/oleo-de-coco.png";
@@ -16,67 +17,6 @@ import farinhaTapioca from "@/assets/Farinha de Tapioca.png";
 import gomaTapioca from "@/assets/Goma de Tapioca.png";
 
 const Produtos = () => {
-  // Função para gerar placeholder SVG leve
-  const generatePlaceholder = (productName: string): string => {
-    // Paleta de cores do site (vermelho, branco, verde)
-    const colors = {
-      background: "#ffffff",
-      text: "#666666",
-      accent: "#228B22",
-      primary: "#DC0000"
-    };
-    
-    // Dividir o nome do produto em linhas se for muito longo
-    const words = productName.split(' ');
-    const lines: string[] = [];
-    let currentLine = '';
-    
-    words.forEach((word, index) => {
-      if ((currentLine + word).length > 20 && currentLine !== '') {
-        lines.push(currentLine.trim());
-        currentLine = word + ' ';
-      } else {
-        currentLine += word + ' ';
-      }
-      if (index === words.length - 1) {
-        lines.push(currentLine.trim());
-      }
-    });
-    
-    // Criar SVG simples e leve como data URI
-    const svg = `
-      <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="400" fill="${colors.background}"/>
-        <circle cx="200" cy="150" r="50" fill="${colors.accent}" opacity="0.15"/>
-        <circle cx="200" cy="150" r="35" fill="${colors.accent}" opacity="0.25"/>
-        ${lines.map((line, index) => 
-          `<text x="200" y="${240 + (index * 28)}" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="${colors.text}" text-anchor="middle">${line}</text>`
-        ).join('')}
-        <rect x="150" y="320" width="100" height="4" fill="${colors.primary}" opacity="0.3" rx="2"/>
-      </svg>
-    `.trim();
-    
-    // Usar encodeURIComponent para evitar problemas com caracteres especiais
-    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-  };
-
-  // Função para obter ícone baseado na tag
-  const getTagIcon = (tag: string) => {
-    const iconMap: { [key: string]: React.ComponentType<any> } = {
-      "Mais Vendido": Trophy,
-      "Campeão de Vendas": Trophy,
-      "Extra Virgem": Award,
-      "Melhor Preço": DollarSign,
-      "Sem Lactose": Shield,
-      "Artesanal": Sparkles,
-      "Sustentável": Recycle,
-      "Sem Glúten": ShieldCheck,
-      "Tradicional": Star,
-      "Novo": Sparkles,
-    };
-    return iconMap[tag] || Star;
-  };
-
   const novidades = [
     {
       name: "Creme de Leite de Coco",

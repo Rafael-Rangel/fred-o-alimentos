@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Users, TrendingUp, Download, Leaf, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, ShoppingCart, Loader2, Clock } from "lucide-react";
+import { ArrowRight, Heart, Users, TrendingUp, Leaf, ShoppingCart, Loader2, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { getTagIcon } from "@/utils/getTagIcon";
 import heroHome from "@/assets/hero-home.png";
 import leiteCoco from "@/assets/leite-de-coco.png";
 import cocoRalado from "@/assets/coco-ralado.png";
@@ -27,7 +28,7 @@ const Index = () => {
   ];
 
   const diferenciais = [
-    { icon: Leaf, title: "Inovação de Produtos", description: "Desenvolvemos constantemente novos produtos e melhorias pensando nas necessidades dos nossos clientes." },
+    { icon: Leaf, title: "Inovação de Produtos", description: "Novos produtos e melhorias constantes pensando em você." },
     { icon: Heart, title: "Saudável", description: "Sem lactose, sem caseína" },
     { icon: Users, title: "Para Todos", description: "Preço acessível para todas as classes" },
     { icon: TrendingUp, title: "Qualidade", description: "27 anos de experiência no setor" },
@@ -60,23 +61,6 @@ const Index = () => {
     "Pará", "Ceará", "Maranhão", "Pernambuco", "Minas Gerais", "Santa Catarina"
   ];
 
-  // Função para obter ícone baseado na tag
-  const getTagIcon = (tag: string) => {
-    const iconMap: { [key: string]: React.ComponentType<any> } = {
-      "Mais Vendido": Trophy,
-      "Campeão de Vendas": Trophy,
-      "Extra Virgem": Award,
-      "Melhor Preço": DollarSign,
-      "Sem Lactose": Shield,
-      "Artesanal": Sparkles,
-      "Sustentável": Recycle,
-      "Sem Glúten": ShieldCheck,
-      "Tradicional": Star,
-      "Novo": Sparkles,
-    };
-    return iconMap[tag] || Star;
-  };
-
   return (
     <main className="pt-20">
       {/* Hero Section */}
@@ -92,37 +76,6 @@ const Index = () => {
             alt="Fredão Alimentos - A linha de alimentos que mais cresce no Brasil"
             className="md:hidden w-full h-full object-cover"
           />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10" style={{ display: 'none' }}>
-          <div className="max-w-2xl animate-fade-up">
-            <span className="inline-block bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
-              🥥 Do Pará para o Brasil
-            </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Alimentos naturais, acessíveis e feitos com
-              <span className="text-accent"> orgulho brasileiro</span>
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed">
-              Desde 2020, levando saúde e qualidade para sua mesa com produtos à base de coco, produzidos no coração da Amazônia.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/produtos"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-1 text-lg animate-bounce-in"
-              >
-                Conheça nossos produtos
-                <ArrowRight size={20} />
-              </Link>
-              <Link
-                to="/sobre"
-                className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300 text-lg backdrop-blur-sm animate-bounce-in"
-                style={{ animationDelay: '0.1s' }}
-              >
-                Nossa história
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 

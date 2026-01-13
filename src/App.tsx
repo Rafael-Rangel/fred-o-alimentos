@@ -1,7 +1,4 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,31 +13,25 @@ import Representantes from "./pages/Representantes";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Favicon />
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/produtos" element={<Produtos />} />
-          <Route path="/compromisso" element={<Compromisso />} />
-          <Route path="/representantes" element={<Representantes />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-        <WhatsAppButton />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <TooltipProvider>
+    <Favicon />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/produtos" element={<Produtos />} />
+        <Route path="/compromisso" element={<Compromisso />} />
+        <Route path="/representantes" element={<Representantes />} />
+        <Route path="/contato" element={<Contato />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+      <WhatsAppButton />
+    </BrowserRouter>
+  </TooltipProvider>
 );
 
 export default App;
