@@ -8,8 +8,58 @@ import manteigaCoco from "@/assets/manteiga-de-coco.png";
 import shoyu from "@/assets/shoyu.png";
 import palmito from "@/assets/palmito.png";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
+import cremeLeiteCoco from "@/assets/Creme de Leite de Coco.png";
+import leiteCocoCondensado from "@/assets/Leite de coco condesado.png";
+import flocoCoco from "@/assets/Floco de Coco.png";
+import azeiteDende from "@/assets/Azeite de Dende.png";
+import farinhaTapioca from "@/assets/Farinha de Tapioca.png";
+import gomaTapioca from "@/assets/Goma de Tapioca.png";
 
 const Produtos = () => {
+  // Função para gerar placeholder SVG leve
+  const generatePlaceholder = (productName: string): string => {
+    // Paleta de cores do site (vermelho, branco, verde)
+    const colors = {
+      background: "#ffffff",
+      text: "#666666",
+      accent: "#228B22",
+      primary: "#DC0000"
+    };
+    
+    // Dividir o nome do produto em linhas se for muito longo
+    const words = productName.split(' ');
+    const lines: string[] = [];
+    let currentLine = '';
+    
+    words.forEach((word, index) => {
+      if ((currentLine + word).length > 20 && currentLine !== '') {
+        lines.push(currentLine.trim());
+        currentLine = word + ' ';
+      } else {
+        currentLine += word + ' ';
+      }
+      if (index === words.length - 1) {
+        lines.push(currentLine.trim());
+      }
+    });
+    
+    // Criar SVG simples e leve como data URI
+    const svg = `
+      <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="400" fill="${colors.background}"/>
+        <circle cx="200" cy="150" r="50" fill="${colors.accent}" opacity="0.15"/>
+        <circle cx="200" cy="150" r="35" fill="${colors.accent}" opacity="0.25"/>
+        ${lines.map((line, index) => 
+          `<text x="200" y="${240 + (index * 28)}" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="${colors.text}" text-anchor="middle">${line}</text>`
+        ).join('')}
+        <rect x="150" y="320" width="100" height="4" fill="${colors.primary}" opacity="0.3" rx="2"/>
+      </svg>
+    `.trim();
+    
+    // Usar encodeURIComponent para evitar problemas com caracteres especiais
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  };
+
   // Função para obter ícone baseado na tag
   const getTagIcon = (tag: string) => {
     const iconMap: { [key: string]: React.ComponentType<any> } = {
@@ -29,28 +79,16 @@ const Produtos = () => {
 
   const novidades = [
     {
-      name: "Creme de Coco",
-      image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80",
-      description: "Novo creme cremoso e versátil.",
-      benefits: ["Novo", "Cremoso", "Versátil"],
+      name: "Creme de Leite de Coco",
+      image: cremeLeiteCoco,
+      description: "Produto inédito no mercado, feito especialmente para pessoas com restrições alimentares. Sem lactose, sem glúten e totalmente vegano. Substitui o creme de leite tradicional com a mesma cremosidade.",
+      benefits: ["Sem lactose", "Sem glúten", "100% vegano", "Sem gordura trans"],
     },
     {
-      name: "Água de Coco",
-      image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80",
-      description: "Refrescante e 100% natural.",
-      benefits: ["Novo", "Natural", "Refrescante"],
-    },
-    {
-      name: "Farinha de Coco",
-      image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80",
-      description: "Sem glúten e rica em fibras.",
-      benefits: ["Novo", "Sem glúten", "Nutritiva"],
-    },
-    {
-      name: "Açúcar de Coco",
-      image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80",
-      description: "Alternativa saudável ao açúcar refinado.",
-      benefits: ["Novo", "Natural", "Saudável"],
+      name: "Leite de Coco Condensado",
+      image: leiteCocoCondensado,
+      description: "Revoluciona o mercado com uma opção inédita, saudável e saborosa. 100% vegano, sem lactose, sem glúten e sem gordura trans. Perfeito para receitas doces ou para ser consumido puro.",
+      benefits: ["Sem lactose", "Sem glúten", "100% vegano", "Sem gordura trans"],
     },
   ];
 
@@ -58,57 +96,71 @@ const Produtos = () => {
     {
       name: "Leite de Coco",
       image: leiteCoco,
-      description: "Cremoso e natural, ideal para receitas doces e salgadas.",
-      benefits: ["Sem lactose", "Sem glúten", "100% natural"],
+      description: "O leite de coco mais vendido! Produto obtido da trituração e prensagem das amêndoas do coco maduro. Certificado pela FDA e presente nos Estados Unidos. Rico em ácidos graxos, vitaminas e minerais.",
+      benefits: ["Zero lactose", "Sem glúten", "Rico em nutrientes", "Certificado FDA"],
       tag: "Campeão de Vendas",
-    },
-    {
-      name: "Óleo de Coco",
-      image: oleoCoco,
-      description: "Puro e versátil, perfeito para culinária e cuidados pessoais.",
-      benefits: ["Extra virgem", "Prensado a frio", "Multiuso"],
-      tag: "Extra Virgem",
     },
     {
       name: "Coco Ralado",
       image: cocoRalado,
-      description: "Fresco e saboroso, essencial para confeitaria.",
-      benefits: ["Sem conservantes", "Textura perfeita", "Alto rendimento"],
+      description: "Coco ralado úmido e adoçado 100% natural, feito a partir da polpa parcialmente desengordurada e adoçado com açúcar natural da fruta. Rico em fibras e óleo de coco extravirgem.",
+      benefits: ["100% natural", "Rico em fibras", "Sem conservantes", "Extravirgem"],
       tag: "Melhor Preço",
+    },
+    {
+      name: "Flocos de Coco",
+      image: flocoCoco,
+      description: "Flocos maiores e crocantes que preservam toda a essência do coco. Totalmente livres de açúcar, corantes, conservantes, gorduras trans e colesterol. Ideal para dietas veganas, sem glúten ou low carb.",
+      benefits: ["Sem açúcar", "Sem conservantes", "Sem gordura trans", "Vegano"],
+      tag: "Tradicional",
+    },
+    {
+      name: "Óleo de Coco",
+      image: oleoCoco,
+      description: "Óleo vegetal natural composto por cerca de 90% de ácidos graxos, obtido por prensagem da polpa do coco maduro. Amplamente utilizado na culinária e indústria cosmética. Ajuda a reduzir colesterol e fortalece o sistema imunológico.",
+      benefits: ["Extra virgem", "Prensado a frio", "Multiuso", "Rico em nutrientes"],
+      tag: "Extra Virgem",
     },
     {
       name: "Manteiga de Coco",
       image: manteigaCoco,
-      description: "Alternativa saudável à manteiga tradicional.",
-      benefits: ["Sem lactose", "Sem caseína", "Vegano"],
+      description: "Ideal para quem segue dieta vegana ou possui intolerância à lactose. Versátil e saborosa, substitui a manteiga tradicional em diversas receitas, garantindo textura e sabor sem abrir mão das suas escolhas alimentares.",
+      benefits: ["Sem lactose", "Vegano", "Versátil", "Saboroso"],
       tag: "Sem Lactose",
     },
     {
       name: "Shoyu",
       image: shoyu,
-      description: "Molho de soja de alta qualidade para suas receitas.",
-      benefits: ["Sabor autêntico", "Fermentação natural", "Versátil"],
+      description: "Produzido através da fermentação natural de soja, cereais torrados, água e sal marinho. Sabor intenso e marcante que pode substituir o sal comum, realçando aroma, cor e conservação dos alimentos.",
+      benefits: ["Fermentação natural", "Rico em proteínas", "Fonte de ferro", "Antioxidante"],
       tag: "Artesanal",
+    },
+    {
+      name: "Azeite de Dendê",
+      image: azeiteDende,
+      description: "Traz o sabor e a alma da Amazônia para suas receitas. Natural e puro, com cor avermelhada intensa e aroma marcante. Realça pratos tradicionais como moqueca, acarajé, vatapá e bobó. Rico em antioxidantes e vitamina E.",
+      benefits: ["100% natural", "Rico em vitamina E", "Antioxidante", "Tradicional"],
+      tag: "Tradicional",
     },
     {
       name: "Palmito",
       image: palmito,
-      description: "Palmito de primeira qualidade, macio e saboroso.",
-      benefits: ["Origem controlada", "Sustentável", "Premium"],
+      description: "Extraído do açaizeiro, espécie nativa da Amazônia. Versátil, saboroso e com baixo teor calórico. Excelente fonte de vitamina C, fibras e potássio. Produzido de forma sustentável no coração da Amazônia. Disponível inteiro e picado.",
+      benefits: ["Baixo teor calórico", "Rico em vitamina C", "Sustentável", "Premium"],
       tag: "Sustentável",
     },
     {
       name: "Farinha de Tapioca",
-      image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&h=800&fit=crop&q=80",
-      description: "Farinha versátil para receitas tradicionais brasileiras.",
-      benefits: ["Sem glúten", "Natural", "Alta qualidade"],
+      image: farinhaTapioca,
+      description: "Produzida com ingredientes simples e naturais – apenas fécula de mandioca e água. Naturalmente livre de glúten, rica em carboidratos e de fácil digestão. Textura granulada e selecionada, leve e versátil com sabor autêntico.",
+      benefits: ["Sem glúten", "Natural", "Fácil digestão", "Fonte de energia"],
       tag: "Sem Glúten",
     },
     {
       name: "Goma de Tapioca",
-      image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=800&h=800&fit=crop&q=80",
-      description: "Perfeita para tapiocas e receitas especiais.",
-      benefits: ["Textura ideal", "Sem aditivos", "Pronta para uso"],
+      image: gomaTapioca,
+      description: "Natural e feita com apenas dois ingredientes – fécula de mandioca e água. Prática e pronta para uso, dispensa hidratação ou peneiragem. Naturalmente livre de glúten e sem conservantes. Baixo teor de gordura e rica em carboidratos.",
+      benefits: ["Pronta para uso", "Sem glúten", "Sem conservantes", "Natural"],
       tag: "Tradicional",
     },
   ];
@@ -126,7 +178,7 @@ const Produtos = () => {
             Linha de Produtos
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
-            Produtos naturais à base de coco e outros alimentos saudáveis, desenvolvidos com qualidade e carinho para sua mesa.
+            A riqueza da Amazônia em cada receita do Brasil. Desenvolvemos produtos de qualidade, com sabor inconfundível, superando expectativas e elevando a verdadeira essência da Amazônia para todo o Brasil.
           </p>
         </div>
       </section>
@@ -273,7 +325,7 @@ const Produtos = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              href="https://wa.me/559130163471?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5 animate-bounce-in"
