@@ -27,7 +27,7 @@ const Index = () => {
   ];
 
   const diferenciais = [
-    { icon: Leaf, title: "100% Natural", description: "Produtos sem aditivos artificiais" },
+    { icon: Leaf, title: "100% Natural", description: "Constantemente desenvolvemos novos produtos e melhorias em nossa linha, sempre pensando nas necessidades e preferências dos nossos clientes." },
     { icon: Heart, title: "Saudável", description: "Sem lactose, sem caseína" },
     { icon: Users, title: "Para Todos", description: "Preço acessível para todas as classes" },
     { icon: TrendingUp, title: "Qualidade", description: "27 anos de experiência no setor" },
