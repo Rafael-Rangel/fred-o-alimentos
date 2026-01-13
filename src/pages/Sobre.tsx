@@ -107,8 +107,8 @@ const Sobre = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">O que nos guia</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>O que nos guia</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Nossos Valores
             </h2>
           </div>
@@ -117,7 +117,8 @@ const Sobre = () => {
             {valores.map((valor, index) => (
               <div
                 key={index}
-                className="text-center group"
+                className="text-center group animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors duration-300">
                   <valor.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
@@ -138,14 +139,14 @@ const Sobre = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Sabia que?</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Sabia que?</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Curiosidades Fredão
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-card p-8 rounded-2xl shadow-card">
+            <div className="bg-card p-8 rounded-2xl shadow-card animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
                 <Globe className="w-8 h-8 text-primary-foreground" />
               </div>
@@ -157,7 +158,7 @@ const Sobre = () => {
               </p>
             </div>
             
-            <div className="bg-card p-8 rounded-2xl shadow-card">
+            <div className="bg-card p-8 rounded-2xl shadow-card animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
                 <Trophy className="w-8 h-8 text-primary-foreground" />
               </div>
@@ -169,7 +170,7 @@ const Sobre = () => {
               </p>
             </div>
             
-            <div className="bg-card p-8 rounded-2xl shadow-card">
+            <div className="bg-card p-8 rounded-2xl shadow-card animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
                 <Cake className="w-8 h-8 text-primary-foreground" />
               </div>

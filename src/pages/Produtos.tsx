@@ -189,11 +189,11 @@ const Produtos = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Lançamentos</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Lançamentos</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Novidades
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               Conheça nossos produtos mais recentes.
             </p>
           </div>
@@ -282,9 +282,9 @@ const Produtos = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
-            <div>
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Catálogo Completo</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <div className="animate-fade-in-up">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Catálogo Completo</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 Todos os Produtos
               </h2>
             </div>

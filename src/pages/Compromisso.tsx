@@ -67,8 +67,8 @@ const Compromisso = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Nossos Pilares</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Nossos Pilares</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               O que nos move
             </h2>
           </div>
@@ -77,7 +77,8 @@ const Compromisso = () => {
             {compromissos.map((item, index) => (
               <div
                 key={index}
-                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6">
                   <item.icon className="w-7 h-7 text-primary" />

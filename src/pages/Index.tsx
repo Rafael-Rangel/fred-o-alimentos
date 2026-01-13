@@ -129,7 +129,7 @@ const Index = () => {
       {/* Carrossel de Empresas */}
       <section className="py-12 bg-card overflow-hidden">
         <div className="text-center mb-8">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground animate-fade-in-up">
             Empresas que confiam no Fredão
           </h2>
         </div>
@@ -176,9 +176,9 @@ const Index = () => {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Quem somos</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
+            <div className="animate-fade-in-up">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Quem somos</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 A história da Fredão Alimentos
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -221,8 +221,8 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary-foreground/80 font-semibold text-sm uppercase tracking-wider">Por que escolher</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-2">
+            <span className="text-primary-foreground/80 font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Por que escolher</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Nossos Diferenciais
             </h2>
           </div>
@@ -255,11 +255,11 @@ const Index = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Novidades</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Novidades</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Produtos Novos
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               Conheça nossos lançamentos mais recentes.
             </p>
           </div>
@@ -339,11 +339,11 @@ const Index = () => {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Portfólio</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Portfólio</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Linha de Produtos
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               Produtos à base de coco, naturais e de alta qualidade para sua alimentação diária.
             </p>
           </div>

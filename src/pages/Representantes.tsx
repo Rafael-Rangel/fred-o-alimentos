@@ -70,8 +70,8 @@ const Representantes = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Parceria</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider animate-fade-in" style={{ animationDelay: '0.1s' }}>Parceria</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Como Funciona
             </h2>
           </div>
