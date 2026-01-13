@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star } from "lucide-react";
+import { ArrowRight, Download, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, Loader2, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import leiteCoco from "@/assets/leite-de-coco.png";
 import cocoRalado from "@/assets/coco-ralado.png";
@@ -232,6 +232,42 @@ const Produtos = () => {
                         {benefit}
                       </span>
                     ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Produtos em processo */}
+            {[1, 2].map((item, index) => (
+              <div
+                key={`em-processo-${item}`}
+                className="bg-white rounded-2xl overflow-hidden shadow-card border-2 border-dashed border-muted-foreground/30 transition-all duration-300 animate-fade-in-up opacity-70"
+                style={{ animationDelay: `${(novidades.length + index) * 0.1}s` }}
+              >
+                <div className="aspect-square overflow-hidden bg-gradient-to-br from-muted/50 to-muted relative flex items-center justify-center">
+                  <div className="absolute top-2 right-2 z-10 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg flex items-center gap-1.5">
+                    <Clock size={12} />
+                    Em breve
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-4 p-8">
+                    <Loader2 className="w-16 h-16 text-muted-foreground/50 animate-spin" />
+                    <div className="text-center">
+                      <div className="h-4 bg-muted-foreground/20 rounded-full w-32 mb-2 animate-pulse"></div>
+                      <div className="h-3 bg-muted-foreground/10 rounded-full w-24 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold text-xl text-muted-foreground mb-2">
+                    Novo produto
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 italic">
+                    Estamos trabalhando em mais produtos incríveis para você...
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full border border-orange-200">
+                      Em desenvolvimento
+                    </span>
                   </div>
                 </div>
               </div>
