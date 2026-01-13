@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Users, TrendingUp, Download, Leaf, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, ShoppingCart } from "lucide-react";
+import { ArrowRight, Heart, Users, TrendingUp, Download, Leaf, Trophy, Award, DollarSign, Shield, Sparkles, Recycle, ShieldCheck, Star, ShoppingCart, Loader2, Clock } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import heroHome from "@/assets/hero-home.png";
 import leiteCoco from "@/assets/leite-de-coco.png";
@@ -15,6 +15,8 @@ import parceiro4 from "@/assets/logosparceiros/4.jpg";
 import assai from "@/assets/logosparceiros/assai.jpg";
 import atacadao from "@/assets/logosparceiros/atacadao.jpg";
 import grupomatheus from "@/assets/logosparceiros/grupomatheus.jpg";
+import cremeLeiteCoco from "@/assets/Creme de Leite de Coco.png";
+import leiteCocoCondensado from "@/assets/Leite de coco condesado.png";
 const Index = () => {
   const products = [
     { name: "Leite de Coco", image: leiteCoco, description: "Cremoso e natural", tag: "Mais Vendido" },
@@ -31,10 +33,16 @@ const Index = () => {
   ];
 
   const produtosNovos = [
-    { name: "Creme de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Novo creme cremoso" },
-    { name: "Água de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Refrescante e natural" },
-    { name: "Farinha de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Sem glúten e nutritiva" },
-    { name: "Açúcar de Coco", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&q=80", description: "Alternativa saudável" },
+    { 
+      name: "Creme de Leite de Coco", 
+      image: cremeLeiteCoco, 
+      description: "Produto inédito no mercado, feito especialmente para pessoas com restrições alimentares. Sem lactose, sem glúten e totalmente vegano." 
+    },
+    { 
+      name: "Leite de Coco Condensado", 
+      image: leiteCocoCondensado, 
+      description: "Revoluciona o mercado com uma opção inédita, saudável e saborosa. 100% vegano, sem lactose, sem glúten e sem gordura trans." 
+    },
   ];
 
   const empresas = [
@@ -265,7 +273,7 @@ const Index = () => {
                   <img
                     src={produto.image}
                     alt={produto.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 animate-fade-in"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 animate-fade-in"
                     style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
                   />
                 </div>
@@ -276,6 +284,42 @@ const Index = () => {
                   <p className="text-muted-foreground text-sm">
                     {produto.description}
                   </p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Produtos em processo */}
+            {[1, 2].map((item, index) => (
+              <div
+                key={`em-processo-${item}`}
+                className="bg-white rounded-2xl overflow-hidden shadow-card border-2 border-dashed border-red-300/50 transition-all duration-300 animate-fade-in-up opacity-70"
+                style={{ animationDelay: `${(produtosNovos.length + index) * 0.1}s` }}
+              >
+                <div className="aspect-square overflow-hidden bg-gradient-to-br from-red-50/50 to-red-100/30 relative flex items-center justify-center">
+                  <div className="absolute top-2 right-2 z-10 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg flex items-center gap-1.5">
+                    <Clock size={12} />
+                    Em breve
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-4 p-8">
+                    <Loader2 className="w-16 h-16 text-red-400/60 animate-spin" />
+                    <div className="text-center">
+                      <div className="h-4 bg-red-200/40 rounded-full w-32 mb-2 animate-pulse"></div>
+                      <div className="h-3 bg-red-200/30 rounded-full w-24 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading font-semibold text-lg text-muted-foreground mb-2">
+                    Novo produto
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 italic">
+                    Estamos trabalhando em mais produtos incríveis para você...
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full border border-red-200">
+                      Em desenvolvimento
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
