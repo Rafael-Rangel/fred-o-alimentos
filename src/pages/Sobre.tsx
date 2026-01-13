@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf } from "lucide-react";
+import { ArrowRight, Target, Eye, Heart, Award, Users, Leaf, Globe, Trophy, Cake } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import coconutProduct from "@/assets/fredao.jpg";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
@@ -89,8 +89,8 @@ const Sobre = () => {
 
             {/* Visão */}
             <div className="bg-card p-10 rounded-2xl shadow-card">
-              <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-6">
-                <Eye className="w-8 h-8 text-secondary-foreground" />
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 text-primary-foreground" />
               </div>
               <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
                 Nossa Visão
@@ -140,68 +140,44 @@ const Sobre = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Sabia que?</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
-              Curiosidades
+              Curiosidades Fredão
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-card p-8 rounded-2xl shadow-card">
-              <div className="text-4xl mb-4">🥥</div>
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <Globe className="w-8 h-8 text-primary-foreground" />
+              </div>
               <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                Origem Amazônica
+                Exportação para os EUA
               </h3>
               <p className="text-muted-foreground">
-                Todos os nossos cocos são cultivados na região amazônica, garantindo frescor e qualidade únicos.
+                Você sabia que a Fredão Alimentos já apareceu em outros países além do Brasil? Pois bem, a empresa em março de 2022 realizou sua primeira exportação para fora do país, chegando nos EUA com a marca "Big Fred" e pode ser encontrada no Estado da Califórnia!
               </p>
             </div>
             
             <div className="bg-card p-8 rounded-2xl shadow-card">
-              <div className="text-4xl mb-4">🌱</div>
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <Trophy className="w-8 h-8 text-primary-foreground" />
+              </div>
               <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                Processo Artesanal
+                Primeira Beneficiadora do Pará
               </h3>
               <p className="text-muted-foreground">
-                Utilizamos técnicas tradicionais combinadas com tecnologia moderna para preservar o sabor natural.
+                Você sabia que a Fredão Alimentos é a primeira empresa beneficiadora de leite de coco no Estado do Pará? Apesar de ter empresas do ramo atuando no Estado (como a Sococo por exemplo), a Fredão Alimentos é a única empresa genuinamente Paraense e que beneficia seus produtos por completo dentro do Estado.
               </p>
             </div>
             
             <div className="bg-card p-8 rounded-2xl shadow-card">
-              <div className="text-4xl mb-4">📈</div>
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <Cake className="w-8 h-8 text-primary-foreground" />
+              </div>
               <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                Crescimento Rápido
+                Parceria com Casa de Bolos
               </h3>
               <p className="text-muted-foreground">
-                Em apenas alguns anos, expandimos para mais de 6 estados brasileiros, levando qualidade para todo o país.
-              </p>
-            </div>
-            
-            <div className="bg-card p-8 rounded-2xl shadow-card">
-              <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                Empresa Familiar
-              </h3>
-              <p className="text-muted-foreground">
-                A Fredão Alimentos mantém valores familiares, priorizando relacionamentos próximos com clientes e parceiros.
-              </p>
-            </div>
-            
-            <div className="bg-card p-8 rounded-2xl shadow-card">
-              <div className="text-4xl mb-4">♻️</div>
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                Sustentabilidade
-              </h3>
-              <p className="text-muted-foreground">
-                Nosso processo de produção é pensado para minimizar o impacto ambiental e valorizar a comunidade local.
-              </p>
-            </div>
-            
-            <div className="bg-card p-8 rounded-2xl shadow-card">
-              <div className="text-4xl mb-4">🏆</div>
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
-                Reconhecimento
-              </h3>
-              <p className="text-muted-foreground">
-                Nossos produtos são reconhecidos por grandes redes de supermercados em todo o Brasil.
+                Você sabia que a empresa Casa de bolos utiliza os produtos Fredão? Sim, desde 2025 a empresa Casa de bolos, franquia internacional top 50 do país utiliza o leite de coco Fredão em sua produção, levando sabor e qualidade para todo brasil!
               </p>
             </div>
           </div>
@@ -229,7 +205,7 @@ const Sobre = () => {
               <ArrowRight size={18} />
             </Link>
             <a
-              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              href="https://wa.me/559130163471?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/10 transition-all duration-300"
