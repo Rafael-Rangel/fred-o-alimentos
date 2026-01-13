@@ -79,24 +79,18 @@ const Index = () => {
 
   return (
     <main className="pt-20">
-      {/* Logo Banner - Mobile Only */}
-      <section className="md:hidden bg-primary py-8 px-4">
-        <div className="container mx-auto flex justify-center items-center">
-          <img
-            src={logo}
-            alt="Fredão Alimentos"
-            className="max-w-[280px] w-full h-auto object-contain"
-          />
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img
             src={heroHome}
             alt="Fredão Alimentos - A linha de alimentos que mais cresce no Brasil"
-            className="w-full h-full object-cover"
+            className="hidden md:block w-full h-full object-cover"
+          />
+          <img
+            src={logo}
+            alt="Fredão Alimentos - A linha de alimentos que mais cresce no Brasil"
+            className="md:hidden w-full h-full object-cover"
           />
         </div>
         
