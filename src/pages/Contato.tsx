@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { useToast } from "@/hooks/use-toast";
 import redPatternBg from "@/assets/red-pattern-bg.jpg";
 
 const Contato = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     nome: "",
     empresa: "",
@@ -14,33 +12,8 @@ const Contato = () => {
     assunto: "",
     mensagem: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simular envio
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
-    });
-    
-    setFormData({
-      nome: "",
-      empresa: "",
-      telefone: "",
-      estado: "",
-      assunto: "",
-      mensagem: "",
-    });
-    setIsSubmitting(false);
   };
 
   const estados = [
@@ -84,7 +57,7 @@ const Contato = () => {
 
               <div className="space-y-6">
                 <a
-                  href="https://wa.me/5521959001194"
+                  href="https://wa.me/559130163471"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-[#25D366]/10 rounded-xl hover:bg-[#25D366]/20 transition-colors group"
@@ -94,12 +67,12 @@ const Contato = () => {
                   </div>
                   <div>
                     <span className="font-semibold text-foreground block">WhatsApp</span>
-                    <span className="text-muted-foreground text-sm">(21) 95900-1194</span>
+                    <span className="text-muted-foreground text-sm">(91) 3016-3471</span>
                   </div>
                 </a>
 
                 <a
-                  href="tel:+5521959001194"
+                  href="tel:+559130163471"
                   className="flex items-center gap-4 p-4 bg-accent rounded-xl hover:bg-accent/80 transition-colors"
                 >
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
@@ -107,7 +80,7 @@ const Contato = () => {
                   </div>
                   <div>
                     <span className="font-semibold text-foreground block">Telefone</span>
-                    <span className="text-muted-foreground text-sm">(21) 95900-1194</span>
+                    <span className="text-muted-foreground text-sm">(91) 3016-3471</span>
                   </div>
                 </a>
 
@@ -143,7 +116,12 @@ const Contato = () => {
                   Envie sua mensagem
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form 
+                  action="https://formsubmit.co/alimentos.fredao@foindustria.com.br" 
+                  method="POST"
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-2">
@@ -250,20 +228,10 @@ const Contato = () => {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-green hover:-translate-y-0.5"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <span className="animate-spin">⏳</span>
-                        Enviando...
-                      </>
-                    ) : (
-                      <>
-                        Enviar Mensagem
-                        <Send size={18} />
-                      </>
-                    )}
+                    Enviar Mensagem
+                    <Send size={18} />
                   </button>
                 </form>
               </div>

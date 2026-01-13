@@ -163,7 +163,7 @@ const Compromisso = () => {
               <ArrowRight size={18} />
             </Link>
             <a
-              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              href="https://wa.me/559130163471?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"

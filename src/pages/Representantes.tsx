@@ -36,7 +36,7 @@ const Representantes = () => {
             Leve os produtos Fredão Alimentos para sua região e faça parte do nosso crescimento.
           </p>
           <a
-            href="https://wa.me/5591999999999?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
+            href="https://wa.me/559130163471?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
@@ -133,7 +133,7 @@ const Representantes = () => {
               </div>
               
               <a
-                href="https://wa.me/5591999999999?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
+                href="https://wa.me/559130163471?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
@@ -162,7 +162,7 @@ const Representantes = () => {
             Entre em contato conosco e saiba como se tornar um representante Fredão Alimentos.
           </p>
           <a
-            href="https://wa.me/5591999999999?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
+            href="https://wa.me/559130163471?text=Olá! Gostaria de me tornar um representante Fredão Alimentos."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-foreground text-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg hover:-translate-y-0.5"

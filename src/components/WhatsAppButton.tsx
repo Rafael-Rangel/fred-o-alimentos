@@ -1,7 +1,7 @@
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const WhatsAppButton = () => {
-  const whatsappNumber = "5591999999999"; // Substituir pelo número real
+  const whatsappNumber = "559130163471";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

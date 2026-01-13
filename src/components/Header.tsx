@@ -45,7 +45,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <a
-              href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+              href="https://wa.me/559130163471?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all duration-300 shadow-red hover:-translate-y-0.5"
@@ -80,7 +80,7 @@ const Header = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/5591999999999?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
+                href="https://wa.me/559130163471?text=Olá! Gostaria de saber mais sobre os produtos Fredão Alimentos."
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
