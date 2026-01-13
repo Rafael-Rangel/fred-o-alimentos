@@ -72,6 +72,7 @@ const dados: EstadoData = {
   ],
   SC: [
     { nome: "João Paulo da Silva Ferreira", telefone: "(48) 98817-4006", area: "Santa Catarina" },
+    { nome: "André Castro", telefone: "(48) 98851-5241", area: "Paraná, Santa Catarina e Rio Grande do Sul" },
   ],
   MG: [
     { nome: "Paulo Henrique M. Quinderer", telefone: "(31) 99153-5748", area: "Minas Gerais" },
@@ -111,6 +112,7 @@ const dados: EstadoData = {
   ],
   PE: [
     { nome: "Walber da Silva Santos", telefone: "(85) 98239-8044", area: "Alagoas, Ceará, Pernambuco, Piauí, Rio Grande do Norte, Sergipe" },
+    { nome: "Ítallo Campos", telefone: "(81) 99504-0405", area: "Pernambuco" },
   ],
   PI: [
     { nome: "Walber da Silva Santos", telefone: "(85) 98239-8044", area: "Alagoas, Ceará, Pernambuco, Piauí, Rio Grande do Norte, Sergipe" },
@@ -120,6 +122,12 @@ const dados: EstadoData = {
   ],
   SE: [
     { nome: "Walber da Silva Santos", telefone: "(85) 98239-8044", area: "Alagoas, Ceará, Pernambuco, Piauí, Rio Grande do Norte, Sergipe" },
+  ],
+  PR: [
+    { nome: "André Castro", telefone: "(48) 98851-5241", area: "Paraná, Santa Catarina e Rio Grande do Sul" },
+  ],
+  RS: [
+    { nome: "André Castro", telefone: "(48) 98851-5241", area: "Paraná, Santa Catarina e Rio Grande do Sul" },
   ],
 };
 
