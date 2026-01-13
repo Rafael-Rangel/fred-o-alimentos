@@ -49,9 +49,9 @@ const Footer = () => {
                 <Phone size={16} />
                 (21) 95900-1194
               </a>
-              <a href="mailto:contato@fredaoalimentos.com.br" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+              <a href="mailto:alimentos.fredao@foindustria.com.br" className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
                 <Mail size={16} />
-                contato@fredaoalimentos.com.br
+                alimentos.fredao@foindustria.com.br
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/80 text-sm">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />

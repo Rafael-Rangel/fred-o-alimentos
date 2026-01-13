@@ -85,7 +85,7 @@ const Contato = () => {
                 </a>
 
                 <a
-                  href="mailto:contato@fredaoalimentos.com.br"
+                  href="mailto:alimentos.fredao@foindustria.com.br"
                   className="flex items-center gap-4 p-4 bg-accent rounded-xl hover:bg-accent/80 transition-colors"
                 >
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
@@ -93,7 +93,7 @@ const Contato = () => {
                   </div>
                   <div>
                     <span className="font-semibold text-foreground block">E-mail</span>
-                    <span className="text-muted-foreground text-sm">contato@fredaoalimentos.com.br</span>
+                    <span className="text-muted-foreground text-sm">alimentos.fredao@foindustria.com.br</span>
                   </div>
                 </a>
 
